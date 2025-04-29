@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image';
 import { BriefcaseIcon, UserIcon, IndianRupeeIcon  } from "lucide-react";
 
 export default function Home() {
@@ -19,9 +20,11 @@ export default function Home() {
 
           {/* Right Section – 50% */}
           <div className="md:w-2/5 flex justify-around">
-            <img
-              src="./images/hero1.png"
+            <Image
+              src="/images/hero1.png"
               alt="Elegance Clinic"
+              width={500}
+              height={500}
               className=" w-auto h-[450px] object-contain"
             />
           </div>
@@ -39,9 +42,11 @@ export default function Home() {
           
           {/* Service 1 - Dental Care */}
           <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-            <img
-              src="./images/d-hero.jpg"
+            <Image
+              src="/images/d-hero.jpg"
               alt="Dental Care"
+              width={500}
+              height={500}
               className="w-full h-64 object-cover opacity-80 rounded-lg"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
@@ -59,9 +64,11 @@ export default function Home() {
 
           {/* Service 2 - Skin Treatments */}
           <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-            <img
-              src="./images/s-hero.webp"
+            <Image
+              src="/images/s-hero.webp"
               alt="Skin Treatments"
+              width={500}
+              height={500}
               className="w-full h-64 object-cover rounded-lg opacity-80"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
@@ -79,9 +86,11 @@ export default function Home() {
 
           {/* Service 3 - Hair Restoration */}
           <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-            <img
-              src="./images/h-hero.webp"
+            <Image
+              src="/images/h-hero.webp"
               alt="Hair Restoration"
+              width={500}
+              height={500}
               className="w-full h-64 object-cover rounded-lg opacity-80"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { MenuIcon, XIcon } from 'lucide-react';
+import Image from 'next/image';
+
 
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -15,9 +17,11 @@ export default function Header() {
         
         {/* Logo */}
         <Link href="/">
-          <img
+          <Image
             src="/images/logo.png"
             alt="Elegance Clinic Logo"
+            width={200}
+            height={50}
             className="h-20 w-auto object-contain flex-shrink-0"
           />
         </Link>

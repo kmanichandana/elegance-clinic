@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 export default function GalleryPage() {
   return (
@@ -20,7 +21,7 @@ export default function GalleryPage() {
           {/* Hospital Images */}
           {["h1.jpeg", "h2.jpeg", "h3.jpeg"].map((img, idx) => (
             <div key={idx} className="overflow-hidden rounded-lg shadow-md">
-              <img
+              <Image
                 src={`/images/hsp/${img}`}
                 alt={`Hospital ${idx + 1}`}
                 className="w-full h-64 object-cover transform hover:scale-105 transition duration-300"
@@ -38,7 +39,7 @@ export default function GalleryPage() {
           {/* Client Images */}
           {["c1.png", "c2.jpg", "c3.webp"].map((img, idx) => (
             <div key={idx} className="overflow-hidden rounded-lg shadow-md">
-              <img
+              <Image
                 src={`/images/hsp/${img}`}
                 alt={`Client ${idx + 1}`}
                 className="w-full h-64 object-cover transform hover:scale-105 transition duration-300"

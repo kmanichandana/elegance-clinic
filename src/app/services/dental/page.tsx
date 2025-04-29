@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from 'next/image';
 import { useEffect, useState } from "react";
 
 const services = [
@@ -125,7 +126,7 @@ export default function DentalServicePage() {
 
           {/* Right Image Block */}
           <div className="h-full flex justify-end items-center">
-            <img
+            <Image
               src="/images/dental/sd.jpg"
               alt="Smile Designing"
               className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md "
@@ -143,7 +144,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/implants.webp" alt="Implants" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+            <Image src="/images/dental/implants.webp" alt="Implants" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
 
@@ -156,7 +157,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/rootcanal.jpg" alt="Root Canal Treatment" 
+            <Image src="/images/dental/rootcanal.jpg" alt="Root Canal Treatment" 
             className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
@@ -170,7 +171,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/cbv.webp" alt="Crowns, Bridges & Veneers" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+            <Image src="/images/dental/cbv.webp" alt="Crowns, Bridges & Veneers" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
 
@@ -183,7 +184,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/braces.avif" alt="Braces" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+            <Image src="/images/dental/braces.avif" alt="Braces" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
 
@@ -196,7 +197,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/invisalign.jpg" alt="Invisalign" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+            <Image src="/images/dental/invisalign.jpg" alt="Invisalign" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
 
@@ -209,7 +210,7 @@ export default function DentalServicePage() {
             </p>
           </div>
           <div className="h-full flex justify-end items-center">
-            <img src="/images/dental/child.webp" alt="Child Dentistry" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+            <Image src="/images/dental/child.webp" alt="Child Dentistry" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
           </div>
         </section>
 

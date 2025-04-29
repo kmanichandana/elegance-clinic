@@ -5,11 +5,11 @@ import { useState } from "react";
 export default function BookAppointment() {
   const [serviceType, setServiceType] = useState("");
 
-  async function handleSubmit(e: any) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     console.log("3");
     e.preventDefault();
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -19,7 +19,8 @@ export default function BookAppointment() {
       time: formData.get("time"),
       message: formData.get("message"),
     };
-    console.log("Form Data:", data); // Debugging line
+    console.log("Form Data:", data);
+
     try {
       console.log("2");
 
@@ -28,11 +29,11 @@ export default function BookAppointment() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      console.log("Response:", res); // Debugging line
+      console.log("Response:", res);
       if (res.ok) {
         alert("Appointment Booked Successfully!");
-        e.target.reset(); // Clear the form
-        setServiceType(""); // Reset dropdown
+        e.currentTarget.reset();
+        setServiceType("");
       } else {
         alert("Failed to book appointment. Please try again.");
       }

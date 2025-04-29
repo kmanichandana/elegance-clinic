@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from 'next/image';
 import { useEffect, useState } from "react";
 
 const services = [
@@ -120,7 +121,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/srt.jpg" alt="Skin Rejuvenation" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/srt.jpg" alt="Skin Rejuvenation" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -133,7 +134,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/cit.png" alt="Collagen Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/cit.png" alt="Collagen Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -146,7 +147,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/lhr.jpg" alt="Laser Hair Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/lhr.jpg" alt="Laser Hair Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -159,7 +160,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/spm.webp" alt="Semi Permanent Makeup" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/spm.webp" alt="Semi Permanent Makeup" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -172,7 +173,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/smr.jpg" alt="Stretch Marks" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/smr.jpg" alt="Stretch Marks" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -185,7 +186,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/hifu.webp" alt="HIFU Fat Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/hifu.webp" alt="HIFU Fat Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -198,7 +199,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/fp.avif" alt="Face Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/fp.avif" alt="Face Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -211,7 +212,7 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/skin/bp.jpg" alt="Body Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/bp.jpg" alt="Body Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 

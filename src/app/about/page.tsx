@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
   return (
     <>
@@ -23,7 +25,7 @@ export default function AboutPage() {
 
           {/* Image */}
           <div className="md:w-1/3">
-            <img
+            <Image
               src="/images/poo.jpeg" // Make sure this image exists in your public/images folder
               alt="Dr. Poojitha"
               className="w-full h-[350px] rounded-lg shadow-lg object-cover"

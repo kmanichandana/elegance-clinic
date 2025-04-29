@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react";
 
 export default function ContactPage() {
@@ -10,7 +10,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-lg max-w-xl mx-auto text-gray-700">
-          Have a question or want to book an appointment? We'd love to hear from you!
+          Have a question or want to book an appointment? We&rsquo;d love to hear from you!
         </p>
       </div>
 
@@ -22,7 +22,7 @@ export default function ContactPage() {
           
           {/* Image */}
           <div className="w-full h-64 mb-8 overflow-hidden rounded-lg">
-            <img
+            <Image
               src="/images/c.png"
               alt="Clinic Contact"
               className="object-contain w-full h-full"

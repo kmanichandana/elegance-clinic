@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from 'next/image';
 import { useEffect, useState } from "react";
 
 const services = [
@@ -118,7 +119,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/antidd.jpg" alt="Anti-Dandruff Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/antidd.jpg" alt="Anti-Dandruff Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -131,7 +132,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/prp.jpg" alt="PRP Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/prp.jpg" alt="PRP Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -144,7 +145,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/gfc.webp" alt="GFC Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/gfc.webp" alt="GFC Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -157,7 +158,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/qr678.jpg" alt="Q678 Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/qr678.jpg" alt="Q678 Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -170,7 +171,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/lc.jpeg" alt="Laser Comb" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/lc.jpeg" alt="Laser Comb" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -183,7 +184,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <img src="/images/hair/dp.webp" alt="Derma Pen Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/dp.webp" alt="Derma Pen Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
         </div>
