@@ -119,7 +119,7 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/antidd.jpg" alt="Anti-Dandruff Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/antidd.jpg" alt="Anti-Dandruff Treatment" height={500} width={500} className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -128,11 +128,12 @@ export default function HairServicePage() {
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - PRP</h2>
               <p className="text-gray-700">
-                PRP therapy boosts hair regrowth by using your body's natural healing properties. It's a safe and effective way to combat thinning hair.
+                PRP therapy boosts hair regrowth by using your body's natural healing properties. It is a safe and effective way to combat thinning hair.
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/prp.jpg" alt="PRP Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/prp.jpg" alt="PRP Treatment" height={500} width={500}
+               className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -145,7 +146,8 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/gfc.webp" alt="GFC Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/gfc.webp" alt="GFC Treatment" height={500} width={500} 
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -158,7 +160,8 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/qr678.jpg" alt="Q678 Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/qr678.jpg" alt="Q678 Hair Treatment" height={500} width={500}
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -171,7 +174,8 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/lc.jpeg" alt="Laser Comb" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/lc.jpeg" alt="Laser Comb" height={500} width={500}
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -184,7 +188,8 @@ export default function HairServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/hair/dp.webp" alt="Derma Pen Hair Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/hair/dp.webp" alt="Derma Pen Hair Treatment" height={500} width={500}
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
         </div>

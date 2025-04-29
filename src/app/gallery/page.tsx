@@ -24,6 +24,7 @@ export default function GalleryPage() {
               <Image
                 src={`/images/hsp/${img}`}
                 alt={`Hospital ${idx + 1}`}
+                height={500} width={500}
                 className="w-full h-64 object-cover transform hover:scale-105 transition duration-300"
               />
             </div>
@@ -42,6 +43,7 @@ export default function GalleryPage() {
               <Image
                 src={`/images/hsp/${img}`}
                 alt={`Client ${idx + 1}`}
+                height={500} width={500}
                 className="w-full h-64 object-cover transform hover:scale-105 transition duration-300"
               />
             </div>

@@ -25,6 +25,7 @@ export default function ContactPage() {
             <Image
               src="/images/c.png"
               alt="Clinic Contact"
+              height={500} width={500}
               className="object-contain w-full h-full"
             />
           </div>

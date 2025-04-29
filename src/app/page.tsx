@@ -15,7 +15,7 @@ export default function Home() {
               At Elegance Clinic, we are committed to enhancing your natural beauty and well-being through expert dental, skin, and hair care.
               Our experienced professionals combine advanced treatments with a personalized approach to ensure you receive the best care in a comfortable environment.
             </p>
-            <p className="text-xl italic text-[#58361ef3]">"Discover the art of self-care at Elegance"</p>
+            <p className="text-xl italic text-[#58361ef3]">&quot;Discover the art of self-care at Elegance&quot;</p>
           </div>
 
           {/* Right Section – 50% */}

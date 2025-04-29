@@ -28,6 +28,8 @@ export default function AboutPage() {
             <Image
               src="/images/poo.jpeg" // Make sure this image exists in your public/images folder
               alt="Dr. Poojitha"
+              width={500}
+              height={500}
               className="w-full h-[350px] rounded-lg shadow-lg object-cover"
             />
           </div>

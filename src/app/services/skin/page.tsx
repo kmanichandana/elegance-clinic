@@ -121,7 +121,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/srt.jpg" alt="Skin Rejuvenation" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/srt.jpg" alt="Skin Rejuvenation" width={500} height={500}
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -130,11 +131,12 @@ export default function SkinServicePage() {
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Collagen Induction Treatment</h2>
               <p className="text-gray-700">
-                Stimulate your body’s natural collagen production to firm, smooth, and improve the texture of your skin.
+                Stimulate your body&rsquo;s natural collagen production to firm, smooth, and improve the texture of your skin.
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/cit.png" alt="Collagen Treatment" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/cit.png" alt="Collagen Treatment" width={500} height={500} 
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -147,7 +149,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/lhr.jpg" alt="Laser Hair Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/lhr.jpg" alt="Laser Hair Reduction" width={500} height={500} 
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -160,7 +163,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/spm.webp" alt="Semi Permanent Makeup" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/spm.webp" alt="Semi Permanent Makeup" width={500} height={500}
+               className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -173,7 +177,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/smr.jpg" alt="Stretch Marks" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/smr.jpg" alt="Stretch Marks" width={500} height={500} 
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -186,7 +191,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/hifu.webp" alt="HIFU Fat Reduction" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/hifu.webp" alt="HIFU Fat Reduction" width={500} height={500} 
+              className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -199,7 +205,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/fp.avif" alt="Face Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/fp.avif" alt="Face Peels" width={500} height={500}
+               className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 
@@ -212,7 +219,8 @@ export default function SkinServicePage() {
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
-              <Image src="/images/skin/bp.jpg" alt="Body Peels" className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
+              <Image src="/images/skin/bp.jpg" alt="Body Peels" width={500} height={500}
+               className="h-auto w-full md:h-full md:w-auto object-contain rounded-lg shadow-md" />
             </div>
           </section>
 

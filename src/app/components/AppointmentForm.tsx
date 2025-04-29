@@ -1,10 +1,20 @@
 "use client";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+// ✅ Define a type for your form data
+type AppointmentFormData = {
+  name: string;
+  email: string;
+  phone: string;
+  date: string;
+  time: string;
+  message?: string;
+};
 
 export default function AppointmentForm() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<AppointmentFormData>();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit: SubmitHandler<AppointmentFormData> = async (data) => {
     const res = await fetch('/api/appointment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
