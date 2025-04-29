@@ -1,103 +1,147 @@
-import Image from "next/image";
+import Link from "next/link";
+import { BriefcaseIcon, UserIcon, IndianRupeeIcon  } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <main 
+        className="bg-secondary bg-fixed">
+        <div className="flex flex-col-reverse md:flex-row gap-8 items-center md:items-start">
+          {/* Left Section – 50% */}
+          <div className="p-12 md:w-3/5 space-y-6">
+            <h1 className="text-5xl font-bold text-[#58361ef3]">Welcome to Elegance Clinic</h1>
+            <p className="text-lg text-[#58361ef3]">
+              At Elegance Clinic, we are committed to enhancing your natural beauty and well-being through expert dental, skin, and hair care.
+              Our experienced professionals combine advanced treatments with a personalized approach to ensure you receive the best care in a comfortable environment.
+            </p>
+            <p className="text-xl italic text-[#58361ef3]">"Discover the art of self-care at Elegance"</p>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          {/* Right Section – 50% */}
+          <div className="md:w-2/5 flex justify-around">
+            <img
+              src="./images/hero1.png"
+              alt="Elegance Clinic"
+              className=" w-auto h-[450px] object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Services Section */}
+      <div className="mt-12 px-4">
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center text-[#58361ef3] mb-8">
+          Our Services
+        </h2>
+
+        {/* Services Grid */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 ">
+          
+          {/* Service 1 - Dental Care */}
+          <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+            <img
+              src="./images/d-hero.jpg"
+              alt="Dental Care"
+              className="w-full h-64 object-cover opacity-80 rounded-lg"
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
+              <h3 className="text-2xl font-bold mb-2">Dental Care</h3>
+              <p className="text-center mb-4">
+                Brighten your smile with our expert dental treatments.
+              </p>
+              <Link href="/services/dental">
+                <button className="bg-white text-black font-semibold px-4 py-2 rounded shadow hover:bg-secondary transform hover:scale-105 transition-transform duration-300">
+                  See More
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Service 2 - Skin Treatments */}
+          <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+            <img
+              src="./images/s-hero.webp"
+              alt="Skin Treatments"
+              className="w-full h-64 object-cover rounded-lg opacity-80"
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
+              <h3 className="text-2xl font-bold mb-2">Skin Treatments</h3>
+              <p className="text-center mb-4">
+                Rejuvenate your skin with personalized care solutions.
+              </p>
+              <Link href="/services/skin">
+                <button className="bg-white text-black font-semibold px-4 py-2 rounded shadow hover:bg-secondary transform hover:scale-105 transition-transform duration-300">
+                  See More
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Service 3 - Hair Restoration */}
+          <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+            <img
+              src="./images/h-hero.webp"
+              alt="Hair Restoration"
+              className="w-full h-64 object-cover rounded-lg opacity-80"
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
+              <h3 className="text-2xl font-bold mb-2">Hair Restoration</h3>
+              <p className="text-center mb-4">
+                Restore and enhance your natural hair growth.
+              </p>
+              <Link href="/services/hair">
+                <button className="bg-white text-black font-semibold px-4 py-2 rounded shadow hover:bg-secondary transform hover:scale-105 transition-transform duration-300">
+                  See More
+                </button>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div className="mt-16 px-4">
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center text-[#58361ef3] mb-8">
+          What Makes Us The Best Choice
+        </h2>
+
+        {/* Features Grid */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+          {/* Feature Box */}
+          {[
+            {
+              Icon: BriefcaseIcon,
+              title: "Experience and Expertise",
+              description: "Our team consists of seasoned professionals delivering exceptional dental, skin, and hair care."
+            },
+            {
+              Icon: UserIcon,
+              title: "Personalized Approach",
+              description: "Every treatment is tailored to meet your unique needs, ensuring the best possible outcomes."
+            },
+            {
+              Icon: IndianRupeeIcon ,
+              title: "Affordable Treatments",
+              description: "We believe quality care should be accessible; offering competitive pricing without compromise."
+            }
+          ].map(({ Icon, title, description }, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center text-center w-full md:w-1/3 p-4 bg-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg h-[200px] justify-between"
+            >
+              <Icon className="w-16 h-16 text-[#58361ef3] mb-4" />
+              <div>
+                <h3 className="text-2xl font-bold mb-2 text-[#58361ef3]">{title}</h3>
+                <p className="text-gray-600">{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>       
+      </div>
+    </main>
+    </>
   );
 }
