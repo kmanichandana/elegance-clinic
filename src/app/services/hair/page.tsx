@@ -128,7 +128,7 @@ export default function HairServicePage() {
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - PRP</h2>
               <p className="text-gray-700">
-                PRP therapy boosts hair regrowth by using your body's natural healing properties. It is a safe and effective way to combat thinning hair.
+                PRP therapy boosts hair regrowth by using your body&rsquo;s natural healing properties. It is a safe and effective way to combat thinning hair.
               </p>
             </div>
             <div className="h-full flex justify-end items-center">
