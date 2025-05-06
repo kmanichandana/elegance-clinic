@@ -21,37 +21,36 @@ const appointmentSchema = new mongoose.Schema(
 const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
-export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
-  await dbConnect();
-
-  const { id } = params;
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+  export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
+    await dbConnect();
+    const id = context.params.id;
+  
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+    }
+  
+    const deleted = await Appointment.findByIdAndDelete(id);
+    if (!deleted) {
+      return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
+    }
+  
+    return NextResponse.json({ message: "Appointment deleted" });
   }
-
-  const deleted = await Appointment.findByIdAndDelete(id);
-  if (!deleted) {
-    return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
+  
+  export async function PUT(req: NextRequest, context: { params: { id: string } }) {
+    await dbConnect();
+    const id = context.params.id;
+    const updateData = await req.json();
+  
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+    }
+  
+    const updated = await Appointment.findByIdAndUpdate(id, updateData, { new: true });
+  
+    if (!updated) {
+      return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
+    }
+  
+    return NextResponse.json(updated);
   }
-
-  return NextResponse.json({ message: "Appointment deleted" });
-}
-
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  await dbConnect();
-
-  const { id } = params;
-  const updateData = await req.json();
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
-  }
-
-  const updated = await Appointment.findByIdAndUpdate(id, updateData, { new: true });
-
-  if (!updated) {
-    return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
-  }
-
-  return NextResponse.json(updated);
-}
