@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useEffect, useState } from "react";
 
 const services = [
-  { name: "Skin Rejuvenation Treatments", id: "skin-rejuvenation" },
-  { name: "Collagen Induction Treatment", id: "collagen-induction" },
+  { name: "Skin Rejuvenation", id: "skin-rejuvenation" },
+  { name: "Collagen Induction", id: "collagen-induction" },
   { name: "Laser Hair Reduction", id: "laser-hair-reduction" },
   { name: "Semi Permanent Makeup", id: "semi-permanent-makeup" },
   { name: "Stretch Marks Treatment", id: "stretch-marks" },
@@ -86,19 +86,19 @@ export default function SkinServicePage() {
       <div className="flex">
         {/* Sidebar */}
         <aside className="hidden md:block w-1/4 p-4 h-screen sticky top-24">
-          <div className="bg-primary rounded-lg p-6 shadow-md h-full">
+          <div className="bg-primary rounded-lg p-5 shadow-md h-full">
             <h3 className="text-2xl font-bold text-secondary mb-6 text-center">
-              Skin Treatments
+              Dental Services
             </h3>
             <ul className="space-y-4">
               {services.map((service) => (
-                <li key={service.id}>
+                <li key={service.id} className="h-18 flex items-center">
                   <Link
                     href={`#${service.id}`}
-                    className={`flex items-center transition cursor-pointer ${
+                    className={`w-full transition cursor-pointer flex items-center h-full px-2 ${
                       activeSection === service.id
-                        ? "text-white font-bold text-lg"
-                        : "text-secondary hover:text-white hover:font-bold hover:text-lg"
+                        ? "text-primary font-bold bg-opacity-90 bg-secondary"
+                        : "text-secondary hover:text-white hover:font-bold"
                     }`}
                   >
                     {service.name}
@@ -113,7 +113,7 @@ export default function SkinServicePage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-16">
 
           {/* Skin Rejuvenation Treatments */}
-          <section id="skin-rejuvenation" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="skin-rejuvenation" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Skin Rejuvenation Treatments</h2>
               <p className="text-gray-700">
@@ -127,7 +127,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Collagen Induction Treatment */}
-          <section id="collagen-induction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="collagen-induction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Collagen Induction Treatment</h2>
               <p className="text-gray-700">
@@ -141,7 +141,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Laser Hair Reduction */}
-          <section id="laser-hair-reduction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="laser-hair-reduction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Laser Hair Reduction</h2>
               <p className="text-gray-700">
@@ -155,7 +155,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Semi Permanent Makeup */}
-          <section id="semi-permanent-makeup" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="semi-permanent-makeup" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Semi Permanent Makeup</h2>
               <p className="text-gray-700">
@@ -169,7 +169,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Stretch Marks Treatment */}
-          <section id="stretch-marks" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="stretch-marks" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Stretch Marks Treatment</h2>
               <p className="text-gray-700">
@@ -183,7 +183,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* HIFU for Excess Fat Reduction */}
-          <section id="hifu-fat-reduction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hifu-fat-reduction" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">HIFU for Excess Fat Reduction</h2>
               <p className="text-gray-700">
@@ -197,7 +197,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Face Peels */}
-          <section id="face-peels" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="face-peels" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Face Peels</h2>
               <p className="text-gray-700">
@@ -211,7 +211,7 @@ export default function SkinServicePage() {
           </section>
 
           {/* Body Peels */}
-          <section id="body-peels" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="body-peels" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Body Peels</h2>
               <p className="text-gray-700">

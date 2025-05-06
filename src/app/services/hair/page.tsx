@@ -84,19 +84,19 @@ export default function HairServicePage() {
       <div className="flex">
         {/* Sidebar */}
         <aside className="hidden md:block w-1/4 p-4 h-screen sticky top-24">
-          <div className="bg-primary rounded-lg p-6 shadow-md h-full">
+          <div className="bg-primary rounded-lg p-5 shadow-md h-full">
             <h3 className="text-2xl font-bold text-secondary mb-6 text-center">
-              Hair Treatments
+              Dental Services
             </h3>
             <ul className="space-y-4">
               {services.map((service) => (
-                <li key={service.id}>
+                <li key={service.id} className="h-18 flex items-center">
                   <Link
                     href={`#${service.id}`}
-                    className={`flex items-center transition cursor-pointer ${
+                    className={`w-full transition cursor-pointer flex items-center h-full px-2 ${
                       activeSection === service.id
-                        ? "text-white font-bold text-lg"
-                        : "text-secondary hover:text-white hover:font-bold hover:text-lg"
+                        ? "text-primary font-bold bg-opacity-90 bg-secondary"
+                        : "text-secondary hover:text-white hover:font-bold"
                     }`}
                   >
                     {service.name}
@@ -111,7 +111,7 @@ export default function HairServicePage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-16">
 
           {/* Anti-Dandruff Treatment */}
-          <section id="anti-dandruff" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="anti-dandruff" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Anti-Dandruff Treatment</h2>
               <p className="text-gray-700">
@@ -124,7 +124,7 @@ export default function HairServicePage() {
           </section>
 
           {/* PRP */}
-          <section id="hairfall-prp" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hairfall-prp" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - PRP</h2>
               <p className="text-gray-700">
@@ -138,7 +138,7 @@ export default function HairServicePage() {
           </section>
 
           {/* GFC */}
-          <section id="hairfall-gfc" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hairfall-gfc" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - GFC</h2>
               <p className="text-gray-700">
@@ -152,7 +152,7 @@ export default function HairServicePage() {
           </section>
 
           {/* Q678 */}
-          <section id="hairfall-q678" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hairfall-q678" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - Q678</h2>
               <p className="text-gray-700">
@@ -166,7 +166,7 @@ export default function HairServicePage() {
           </section>
 
           {/* Laser Comb */}
-          <section id="hairfall-lasercomb" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hairfall-lasercomb" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - Laser Comb</h2>
               <p className="text-gray-700">
@@ -180,7 +180,7 @@ export default function HairServicePage() {
           </section>
 
           {/* Derma Pen */}
-          <section id="hairfall-dermapen" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+          <section id="hairfall-dermapen" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
               <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - Derma Pen</h2>
               <p className="text-gray-700">

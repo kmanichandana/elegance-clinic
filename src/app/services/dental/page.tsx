@@ -87,19 +87,19 @@ export default function DentalServicePage() {
 
           {/* Sidebar */}
           <aside className="hidden md:block w-1/4 p-4 h-screen sticky top-24">
-              <div className="bg-primary rounded-lg p-6 shadow-md h-full">
+              <div className="bg-primary rounded-lg p-5 shadow-md h-full">
                 <h3 className="text-2xl font-bold text-secondary mb-6 text-center">
                   Dental Services
                 </h3>
                 <ul className="space-y-4">
                   {services.map((service) => (
-                    <li key={service.id}>
+                    <li key={service.id} className="h-18 flex items-center">
                       <Link
                         href={`#${service.id}`}
-                        className={`flex items-center transition cursor-pointer ${
+                        className={`w-full transition cursor-pointer flex items-center h-full px-2 ${
                           activeSection === service.id
-                            ? "text-white font-bold text-lg"
-                            : "text-secondary hover:text-white hover:font-bold hover:text-lg"
+                            ? "text-primary font-bold bg-opacity-90 bg-secondary"
+                            : "text-secondary hover:text-white hover:font-bold"
                         }`}
                       >
                         {service.name}
@@ -114,7 +114,7 @@ export default function DentalServicePage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-16">
 
         {/* Service 1 - Smile Designing */}
-        <section id="smile-designing" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="smile-designing" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
 
           {/* Left Text Block */}
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2"> {/* <- Added right padding */}
@@ -138,7 +138,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 2 - Implants */}
-        <section id="implants" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="implants" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Implants</h2>
             <p className="text-gray-700">
@@ -151,7 +151,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 3 - Root Canal */}
-        <section id="root-canal" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="root-canal" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Root Canal</h2>
             <p className="text-gray-700">
@@ -165,7 +165,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 4 - Crowns, Bridges & Veneers */}
-        <section id="crowns-bridges-veneers" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="crowns-bridges-veneers" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Crowns, Bridges & Veneers</h2>
             <p className="text-gray-700">
@@ -179,7 +179,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 5 - Braces */}
-        <section id="braces" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="braces" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Braces</h2>
             <p className="text-gray-700">
@@ -193,7 +193,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 6 - Invisalign */}
-        <section id="invisalign" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="invisalign" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Invisalign</h2>
             <p className="text-gray-700">
@@ -207,7 +207,7 @@ export default function DentalServicePage() {
         </section>
 
         {/* Service 7 - Child Dentistry */}
-        <section id="child-dentistry" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 shadow-black rounded-lg">
+        <section id="child-dentistry" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
           <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
             <h2 className="text-2xl font-bold text-primary mb-4">Child Dentistry</h2>
             <p className="text-gray-700">
