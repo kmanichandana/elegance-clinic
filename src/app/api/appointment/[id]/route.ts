@@ -23,16 +23,10 @@ const appointmentSchema = new mongoose.Schema(
 const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
-interface Context {
-  params: {
-    id: string;
-  };
-}
-
 // DELETE /api/appointment/[id]
-export async function DELETE(req: NextRequest, context: Context) {
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   await dbConnect();
-  const { id } = context.params;
+  const { id } = params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
@@ -47,9 +41,9 @@ export async function DELETE(req: NextRequest, context: Context) {
 }
 
 // PUT /api/appointment/[id]
-export async function PUT(req: NextRequest, context: Context) {
+export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   await dbConnect();
-  const { id } = context.params;
+  const { id } = params;
   const updateData = await req.json();
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
