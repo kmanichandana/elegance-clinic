@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import mongoose from "mongoose";
 
-// Define appointment schema
+// Schema
 const appointmentSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -13,32 +13,21 @@ const appointmentSchema = new mongoose.Schema(
     time: { type: String, required: true },
     message: { type: String },
   },
-  {
-    collection: "appointments",
-    timestamps: true,
-  }
+  { collection: "appointments", timestamps: true }
 );
 
-// Create model if not already created
 const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
-// ✅ Manually type the context argument
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-// DELETE /api/appointment/[id]
-export async function DELETE(
-  req: NextRequest,
-  { params }: Params
-) {
+// DELETE handler
+export async function DELETE(req: NextRequest) {
   await dbConnect();
-  const { id } = params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  // Extract the ID from the request URL
+  const url = new URL(req.url);
+  const id = url.pathname.split("/").pop();
+
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 
@@ -50,18 +39,19 @@ export async function DELETE(
   return NextResponse.json({ message: "Appointment deleted successfully" });
 }
 
-// PUT /api/appointment/[id]
-export async function PUT(
-  req: NextRequest,
-  { params }: Params
-) {
+// PUT handler
+export async function PUT(req: NextRequest) {
   await dbConnect();
-  const { id } = params;
-  const updateData = await req.json();
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  // Extract the ID from the request URL
+  const url = new URL(req.url);
+  const id = url.pathname.split("/").pop();
+
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
+
+  const updateData = await req.json();
 
   const updated = await Appointment.findByIdAndUpdate(id, updateData, { new: true });
   if (!updated) {
