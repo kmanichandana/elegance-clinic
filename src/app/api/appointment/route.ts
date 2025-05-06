@@ -20,11 +20,14 @@ const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
 // DELETE handler
-export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
+export async function DELETE(req: NextRequest) {
   await dbConnect();
-  const { id } = context.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  // Extract the ID from the request URL
+  const url = new URL(req.url);
+  const id = url.pathname.split("/").pop();
+
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 
@@ -37,14 +40,18 @@ export async function DELETE(req: NextRequest, context: { params: { id: string }
 }
 
 // PUT handler
-export async function PUT(req: NextRequest, context: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
   await dbConnect();
-  const { id } = context.params;
-  const updateData = await req.json();
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  // Extract the ID from the request URL
+  const url = new URL(req.url);
+  const id = url.pathname.split("/").pop();
+
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
+
+  const updateData = await req.json();
 
   const updated = await Appointment.findByIdAndUpdate(id, updateData, { new: true });
   if (!updated) {
