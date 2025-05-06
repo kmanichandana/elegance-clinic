@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import mongoose from "mongoose";
 
-// Define schema
+// Schema
 const appointmentSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -13,10 +13,7 @@ const appointmentSchema = new mongoose.Schema(
     time: { type: String, required: true },
     message: { type: String },
   },
-  {
-    collection: "appointments",
-    timestamps: true,
-  }
+  { collection: "appointments", timestamps: true }
 );
 
 const Appointment =
@@ -25,10 +22,10 @@ const Appointment =
 // DELETE handler
 export async function DELETE(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: Record<string, string> }
 ) {
   await dbConnect();
-  const { id } = context.params;
+  const id = params.id;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
@@ -39,7 +36,7 @@ export async function DELETE(
     return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
   }
 
-  return NextResponse.json({ message: "Appointment deleted" });
+  return NextResponse.json({ message: "Appointment deleted successfully" });
 }
 
 // PUT handler
@@ -48,17 +45,14 @@ export async function PUT(
   { params }: { params: Record<string, string> }
 ) {
   await dbConnect();
-  const { id } = context.params;
+  const id = params.id;
   const updateData = await req.json();
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 
-  const updated = await Appointment.findByIdAndUpdate(id, updateData, {
-    new: true,
-  });
-
+  const updated = await Appointment.findByIdAndUpdate(id, updateData, { new: true });
   if (!updated) {
     return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
   }
