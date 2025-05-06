@@ -20,12 +20,9 @@ const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
 // DELETE handler
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: Record<string, string> }
-) {
+export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
   await dbConnect();
-  const id = params.id;
+  const { id } = context.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
@@ -40,12 +37,9 @@ export async function DELETE(
 }
 
 // PUT handler
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: Record<string, string> }
-) {
+export async function PUT(req: NextRequest, context: { params: { id: string } }) {
   await dbConnect();
-  const id = params.id;
+  const { id } = context.params;
   const updateData = await req.json();
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
