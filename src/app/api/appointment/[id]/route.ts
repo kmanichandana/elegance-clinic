@@ -19,12 +19,22 @@ const appointmentSchema = new mongoose.Schema(
   }
 );
 
-// Create model
+// Create model if not already created
 const Appointment =
   mongoose.models.Appointment || mongoose.model("Appointment", appointmentSchema);
 
+// ✅ Manually type the context argument
+type Params = {
+  params: {
+    id: string;
+  };
+};
+
 // DELETE /api/appointment/[id]
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(
+  req: NextRequest,
+  { params }: Params
+) {
   await dbConnect();
   const { id } = params;
 
@@ -37,11 +47,14 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
     return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
   }
 
-  return NextResponse.json({ message: "Appointment deleted successfully" }, { status: 200 });
+  return NextResponse.json({ message: "Appointment deleted successfully" });
 }
 
 // PUT /api/appointment/[id]
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(
+  req: NextRequest,
+  { params }: Params
+) {
   await dbConnect();
   const { id } = params;
   const updateData = await req.json();
@@ -55,5 +68,5 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     return NextResponse.json({ error: "Appointment not found" }, { status: 404 });
   }
 
-  return NextResponse.json(updated, { status: 200 });
+  return NextResponse.json(updated);
 }
