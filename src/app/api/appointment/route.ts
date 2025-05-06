@@ -45,7 +45,7 @@ export async function DELETE(
 // PUT handler
 export async function PUT(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: Record<string, string> }
 ) {
   await dbConnect();
   const { id } = context.params;
