@@ -1,22 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  // Redirect if already logged in
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isAdminLoggedIn");
+    if (isLoggedIn === "true") {
+      router.push("/admin/appointments");
+    }
+  }, [router]);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mock authentication (replace with real API call)
-    if (username === "doctor" && password === "doctor") {
-      alert("Login successful!");
+    const res = await fetch("/api/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      localStorage.setItem("isAdminLoggedIn", "true"); // ✅ persist login
+      toast.success(result.message || "Login successful!");
       router.push("/admin/appointments");
     } else {
-      alert("Invalid credentials!");
+      toast.error(result.error || "Invalid credentials!");
     }
   };
 

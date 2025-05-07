@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import toast from "react-hot-toast";
+
 
 export default function BookAppointment() {
   const [serviceType, setServiceType] = useState("");
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null); 
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,14 +33,16 @@ export default function BookAppointment() {
       });
       console.log("Response:", res);
       if (res.ok) {
-        alert("Appointment Booked Successfully!");
-        e.currentTarget.reset();
+        toast.success("Appointment Booked Successfully!");
+        formRef.current?.reset();
         setServiceType("");
       } else {
-        alert("Failed to book appointment. Please try again.");
+        toast.error("Failed to book appointment. Please try again.");
       }
     } catch (error) {
-      console.error("Error submitting form", error);
+      toast.error("An error occurred while booking.");
+    }finally {
+      setLoading(false); // End loading
     }
   }
 
@@ -50,7 +56,7 @@ export default function BookAppointment() {
       </div>
 
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
           
           {/* Full Name */}
           <div>

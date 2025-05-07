@@ -2,6 +2,7 @@
 import Header from "@/app/components/Header";
 import "./globals.css";
 import Footer from "@/app/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Elegance Clinic",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Main page content */}
         <main className="flex-grow">
           {children}
+          <Toaster position="bottom-right" reverseOrder={false} />
         </main>
 
         <Footer />
