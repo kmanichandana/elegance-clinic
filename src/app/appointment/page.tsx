@@ -6,7 +6,6 @@ export default function BookAppointment() {
   const [serviceType, setServiceType] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    console.log("3");
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -22,7 +21,6 @@ export default function BookAppointment() {
     console.log("Form Data:", data);
 
     try {
-      console.log("2");
 
       const res = await fetch("/api/appointment", {
         method: "POST",
@@ -39,7 +37,6 @@ export default function BookAppointment() {
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("An error occurred. Please try again.");
     }
   }
 
