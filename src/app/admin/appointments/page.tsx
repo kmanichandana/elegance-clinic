@@ -53,7 +53,6 @@ export default function AdminAppointments() {
 
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!editingAppointment) return;
 
     const res = await fetch(`/api/appointment/${editingAppointment._id}`, {
@@ -65,10 +64,11 @@ export default function AdminAppointments() {
     if (res.ok) {
       toast.success("Appointment updated successfully!");
       setEditingAppointment(null);
-      const updatedAppointments = appointments.map((appt) =>
-        appt._id === editingAppointment._id ? editingAppointment : appt
+      setAppointments((prev) =>
+        prev.map((appt) =>
+          appt._id === editingAppointment._id ? editingAppointment : appt
+        )
       );
-      setAppointments(updatedAppointments);
     } else {
       toast.error("Failed to update appointment.");
     }
@@ -112,18 +112,22 @@ export default function AdminAppointments() {
                   <td className="border p-2">{appt.date}</td>
                   <td className="border p-2">{appt.time}</td>
                   <td className="border p-2">
-                    <button
-                      onClick={() => handleEdit(appt)}
-                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDeleteClick(appt._id)}
-                      className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                    >
-                      Delete
-                    </button>
+                    {new Date(appt.date) > new Date() && (
+                      <button
+                        onClick={() => handleEdit(appt)}
+                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
+                      >
+                        Edit
+                      </button>
+                    )}
+                    {new Date(appt.date) > new Date() && (
+                      <button
+                        onClick={() => handleDeleteClick(appt._id)}
+                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                      >
+                        Delete
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -135,7 +139,106 @@ export default function AdminAppointments() {
       {editingAppointment && (
         <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold mb-4">Edit Appointment</h2>
-          {/* form contents unchanged */}
+          <form onSubmit={handleUpdate} className="space-y-4">
+            <div>
+              <label className="block text-sm font-semibold mb-1">Name</label>
+              <input
+                type="text"
+                value={editingAppointment.name}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, name: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Email</label>
+              <input
+                type="email"
+                value={editingAppointment.email || ""}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, email: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Phone</label>
+              <input
+                type="tel"
+                value={editingAppointment.phone}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, phone: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Service Type</label>
+              <select
+                value={editingAppointment.serviceType}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, serviceType: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                required
+              >
+                <option value="Dental">Dental Care</option>
+                <option value="Skin">Skin Care</option>
+                <option value="Hair">Hair Care</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Preferred Date</label>
+              <input
+                type="date"
+                value={editingAppointment.date}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, date: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Preferred Time</label>
+              <input
+                type="time"
+                value={editingAppointment.time}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, time: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold mb-1">Message</label>
+              <textarea
+                value={editingAppointment.message || ""}
+                onChange={(e) =>
+                  setEditingAppointment({ ...editingAppointment, message: e.target.value })
+                }
+                className="w-full p-3 border rounded"
+                rows={4}
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary text-secondary py-3 px-6 rounded hover:bg-secondary hover:text-primary"
+            >
+              Update Appointment
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditingAppointment(null)}
+              className="ml-4 border border-gray-300 text-gray-700 px-6 py-3 rounded hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+          </form>
         </div>
       )}
 
