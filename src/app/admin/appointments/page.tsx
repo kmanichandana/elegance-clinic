@@ -21,6 +21,8 @@ export default function AdminAppointments() {
   const [confirmId, setConfirmId] = useState<string | null>(null);
   const router = useRouter();
 
+  const today = new Date().toISOString().split("T")[0];
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isAdminLoggedIn");
     if (isLoggedIn !== "true") {
@@ -48,6 +50,11 @@ export default function AdminAppointments() {
   };
 
   const handleEdit = (appointment: Appointment) => {
+    const isEditable = new Date(appointment.date) >= new Date(today);
+    if (!isEditable) {
+      toast.error("You can only edit today's or future appointments.");
+      return;
+    }
     setEditingAppointment(appointment);
   };
 
@@ -80,7 +87,7 @@ export default function AdminAppointments() {
         <h1 className="text-4xl font-bold">Manage Appointments</h1>
         <button
           onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+          className="bg-primary text-secondary px-4 py-2 rounded hover:font-bold"
         >
           Logout
         </button>
@@ -112,21 +119,23 @@ export default function AdminAppointments() {
                   <td className="border p-2">{appt.date}</td>
                   <td className="border p-2">{appt.time}</td>
                   <td className="border p-2">
-                    {new Date(appt.date) > new Date() && (
-                      <button
-                        onClick={() => handleEdit(appt)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2"
-                      >
-                        Edit
-                      </button>
-                    )}
-                    {new Date(appt.date) > new Date() && (
-                      <button
-                        onClick={() => handleDeleteClick(appt._id)}
-                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                      >
-                        Delete
-                      </button>
+                    {new Date(appt.date) >= new Date(today) ? (
+                      <>
+                        <button
+                          onClick={() => handleEdit(appt)}
+                          className="bg-primary text-secondary px-6 py-2 rounded hover:text-primary hover:bg-secondary mr-2"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDeleteClick(appt._id)}
+                          className="bg-primary text-secondary px-6 py-2 rounded hover:text-primary hover:bg-secondary ml-2"
+                        >
+                          Delete
+                        </button>
+                      </>
+                    ) : (
+                      <span className="text-gray-500 italic">Completed</span>
                     )}
                   </td>
                 </tr>
@@ -195,6 +204,7 @@ export default function AdminAppointments() {
               <input
                 type="date"
                 value={editingAppointment.date}
+                min={today}
                 onChange={(e) =>
                   setEditingAppointment({ ...editingAppointment, date: e.target.value })
                 }
