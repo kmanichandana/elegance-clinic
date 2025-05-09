@@ -95,6 +95,9 @@ export default function BookAppointment() {
           </button>
         </form>
       </div>
+      <p className="text-base text-primary mt-4">
+          Want to reschedule? Contact admin at <a href="mailto:admin@elegancecare.in" className="underline font-bold">admin@elegancecare.in</a>
+        </p>
     </main>
   );
 }
