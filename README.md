@@ -69,8 +69,17 @@ The Elegance Clinic Web Application is a full-stack solution built to streamline
 - In the Admin Dashboard, click the Edit button for an appointment.
 - Update the details in the form and submit.
 - Verify that the updated details are reflected in the list.
+- **Note**: You can only edit appointments for today or future dates. Past appointments cannot be edited.
+
 ### 4. Delete (DELETE)
 - Login as Admin
 - In the Admin Dashboard, click the Delete button for an appointment.
 - Confirm the deletion.
 - Verify that the appointment is removed from the list.
+- **Note**: You can only delete appointments for today or future dates. Past appointments cannot be deleted.
+
+---
+
+## Future Scope
+
+- **SMS Notifications**: Add a feature to send SMS notifications to users when an appointment is confirmed.
