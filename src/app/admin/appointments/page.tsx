@@ -146,7 +146,57 @@ export default function AdminAppointments() {
         )}
       </div>
 
-      {/* Edit form and confirmation modal remain unchanged */}
+      {/* Edit form */}
+      {editingAppointment && (
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">Edit Appointment</h2>
+          <form onSubmit={handleUpdate} className="space-y-4">
+            <input type="text" value={editingAppointment.name} onChange={(e) => setEditingAppointment({ ...editingAppointment, name: e.target.value })} className="w-full p-3 border rounded" required />
+            <input type="email" value={editingAppointment.email || ""} onChange={(e) => setEditingAppointment({ ...editingAppointment, email: e.target.value })} className="w-full p-3 border rounded" />
+            <input type="tel" value={editingAppointment.phone} onChange={(e) => setEditingAppointment({ ...editingAppointment, phone: e.target.value })} className="w-full p-3 border rounded" required />
+            <select value={editingAppointment.serviceType} onChange={(e) => setEditingAppointment({ ...editingAppointment, serviceType: e.target.value })} className="w-full p-3 border rounded" required>
+              <option value="Dental">Dental</option>
+              <option value="Skin">Skin</option>
+              <option value="Hair">Hair</option>
+            </select>
+            <input type="date" value={editingAppointment.date} min={today} onChange={(e) => setEditingAppointment({ ...editingAppointment, date: e.target.value })} className="w-full p-3 border rounded" required />
+            <input type="time" value={editingAppointment.time} onChange={(e) => setEditingAppointment({ ...editingAppointment, time: e.target.value })} className="w-full p-3 border rounded" required />
+            <textarea value={editingAppointment.message || ""} onChange={(e) => setEditingAppointment({ ...editingAppointment, message: e.target.value })} className="w-full p-3 border rounded" rows={4} />
+            <div className="flex gap-4">
+              <button type="submit" className="bg-primary text-secondary px-6 py-2 rounded hover:bg-secondary hover:text-primary">Update Appointment</button>
+              <button type="button" onClick={() => setEditingAppointment(null)} className="border px-6 py-2 rounded text-gray-700 hover:bg-gray-100">Cancel</button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {/* Confirmation modal */}
+      {confirmId && (
+        <div className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex items-center justify-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-[320px]">
+            <p className="mb-4 text-sm font-medium text-center">Are you sure you want to delete this appointment?</p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={async () => {
+                  const res = await fetch(`/api/appointment/${confirmId}`, { method: "DELETE" });
+                  if (res.ok) {
+                    toast.success("Appointment deleted successfully!");
+                    setAppointments(prev => prev.filter(appt => appt._id !== confirmId));
+                  } else {
+                    toast.error("Failed to delete appointment.");
+                  }
+                  setConfirmId(null);
+                }}
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              >
+                Yes
+              </button>
+              <button onClick={() => setConfirmId(null)} className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">No</button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }
