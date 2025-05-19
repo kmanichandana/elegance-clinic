@@ -124,19 +124,19 @@ export default function AdminAppointments() {
                       <>
                         <button
                           onClick={() => handleEdit(appt)}
-                          className="flex items-center bg-primary text-secondary px-4 py-1 rounded hover:text-primary hover:bg-secondary transition-transform transform hover:scale-105"
+                          className="flex items-center bg-primary text-secondary px-4 py-1 rounded transition-transform transform hover:scale-105"
                         >
                           <Pencil className="w-4 h-4 mr-1" /> Edit
                         </button>
                         <button
                           onClick={() => handleDeleteClick(appt._id)}
-                          className="flex items-center bg-primary text-secondary px-4 py-1 rounded hover:text-primary hover:bg-secondary transition-transform transform hover:scale-105"
+                          className="flex items-center bg-primary text-secondary px-4 py-1 rounded transition-transform transform hover:scale-105"
                         >
                           <Trash2 className="w-4 h-4 mr-1" /> Delete
                         </button>
                       </>
                     ) : (
-                      <span className="text-gray-500 italic">Completed</span>
+                      <span className="text-primary italic">Completed</span>
                     )}
                   </td>
                 </tr>
@@ -187,7 +187,7 @@ export default function AdminAppointments() {
                   }
                   setConfirmId(null);
                 }}
-                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary"
               >
                 Yes
               </button>

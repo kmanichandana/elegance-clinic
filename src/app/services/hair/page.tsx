@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const services = [
   { name: "Anti-Dandruff Treatment", id: "anti-dandruff" },
-  { name: "Hair Fall Control - PRP", id: "hairfall-prp" },
+  { name: "Hair Fall Control - Stem cell Therapy", id: "hairfall-prp" },
   { name: "Hair Fall Control - GFC", id: "hairfall-gfc" },
   { name: "Hair Fall Control - Q678", id: "hairfall-q678" },
   { name: "Hair Fall Control - Laser Comb", id: "hairfall-lasercomb" },
@@ -126,9 +126,9 @@ export default function HairServicePage() {
           {/* PRP */}
           <section id="hairfall-prp" className="flex flex-col h-auto md:flex-row items-center md:h-[300px] shadow-md p-4 rounded-lg">
             <div className="flex-1 h-full flex flex-col justify-evenly pr-2">
-              <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - PRP</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4">Hair Fall Control - Stel Cell Therapy</h2>
               <p className="text-gray-700">
-                PRP therapy boosts hair regrowth by using your body&rsquo;s natural healing properties. It is a safe and effective way to combat thinning hair.
+                Stem Cell Therapy revitalizes hair follicles and stimulates natural hair growth at the cellular level. It offers a cutting-edge, non-invasive solution to combat hair thinning and loss.
               </p>
             </div>
             <div className="h-full flex justify-end items-center">

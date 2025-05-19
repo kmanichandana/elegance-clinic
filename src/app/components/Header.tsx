@@ -112,15 +112,15 @@ export default function Header() {
         {/* Buttons - Desktop */}
         <div className="hidden md:flex flex-shrink-0 gap-4">
           <Link href="/appointment">
-            <button className="bg-primary text-secondary px-4 py-2 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(75,43,20,0.5)] hover:bg-secondary hover:text-primary">
+            <button className="bg-primary text-secondary px-4 py-2 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(75,43,20,0.5)]">
               Book Appointment
             </button>
           </Link>
-          <Link href="/admin/login">
+          {/* <Link href="/admin/login">
             <button className="bg-primary text-secondary px-4 py-2 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(75,43,20,0.5)] hover:bg-secondary hover:text-primary">
               Admin
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -202,14 +202,14 @@ export default function Header() {
               Book Appointment
             </button>
           </Link>
-          <Link
+          {/* <Link
             href="/admin/login"
             onClick={() => setMobileMenuOpen(false)}
           >
             <button className="w-full bg-primary text-secondary py-2 rounded font-semibold hover:bg-secondary hover:text-primary">
               Admin
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>

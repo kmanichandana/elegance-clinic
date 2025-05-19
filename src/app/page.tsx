@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from 'next/image';
-import { BriefcaseIcon, UserIcon, IndianRupeeIcon  } from "lucide-react";
+import { BriefcaseIcon, UserIcon, IndianRupeeIcon, CalendarCheck   } from "lucide-react";
 
 export default function Home() {
   return (
@@ -16,7 +16,14 @@ export default function Home() {
               Our experienced professionals combine advanced treatments with a personalized approach to ensure you receive the best care in a comfortable environment.
             </p>
             <p className="text-xl italic text-[#58361ef3]">&quot;Discover the art of self-care at Elegance&quot;</p>
+            <Link href="/appointment" scroll={false}>
+              <button className="mt-4 inline-flex items-center bg-primary text-secondary px-6 py-3 rounded font-semibold transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                <CalendarCheck className="w-5 h-5 mr-2" />
+                Book Your session today
+              </button>
+            </Link>
           </div>
+          
 
           {/* Right Section – 50% */}
           <div className="md:w-2/5 flex justify-around">
@@ -33,7 +40,7 @@ export default function Home() {
         {/* Services Section */}
       <div className="mt-12 px-4">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-[#58361ef3] mb-8">
+        <h2 className="text-5xl font-bold text-center text-[#58361ef3] mb-8">
           Our Services
         </h2>
 
@@ -50,7 +57,7 @@ export default function Home() {
               className="w-full h-64 object-cover opacity-80 rounded-lg"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
-              <h3 className="text-2xl font-bold mb-2">Dental Care</h3>
+              <h3 className="text-4xl font-bold mb-2">Dental Care</h3>
               <p className="text-center mb-4">
                 Brighten your smile with our expert dental treatments.
               </p>
@@ -66,13 +73,13 @@ export default function Home() {
           <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
             <Image
               src="/images/s-hero.webp"
-              alt="Skin Treatments"
+              alt="Skin Care"
               width={500}
               height={500}
               className="w-full h-64 object-cover rounded-lg opacity-80"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
-              <h3 className="text-2xl font-bold mb-2">Skin Treatments</h3>
+              <h3 className="text-4xl font-bold mb-2">Skin Care</h3>
               <p className="text-center mb-4">
                 Rejuvenate your skin with personalized care solutions.
               </p>
@@ -88,13 +95,13 @@ export default function Home() {
           <div className="relative w-full md:w-1/3 bg-black rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
             <Image
               src="/images/h-hero.webp"
-              alt="Hair Restoration"
+              alt="Hair Care"
               width={500}
               height={500}
               className="w-full h-64 object-cover rounded-lg opacity-80"
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-40 rounded-lg p-4">
-              <h3 className="text-2xl font-bold mb-2">Hair Restoration</h3>
+              <h3 className="text-4xl font-bold mb-2">Hair Care</h3>
               <p className="text-center mb-4">
                 Restore and enhance your natural hair growth.
               </p>

@@ -8,14 +8,19 @@ module.exports = {
       colors: {
         primary: '#4b2b14f3',
         secondary: '#ebdcd2',
-        // accent: '#F472B6',
-        // neutral: '#374151',
-        // 'base-100': '#FFFFFF',
-        // info: '#3ABFF8',
-        // success: '#36D399',
-        // warning: '#FBBD23',
-        // error: '#F87272',
-      }
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.8s ease-out both',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
+      fontFamily: {
+        cursive: ['"Dancing Script"', 'cursive'], // or any other cursive font
+      },
     },
   },
   plugins: [],

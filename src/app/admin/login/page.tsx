@@ -66,7 +66,7 @@ export default function AdminLogin() {
         </div>
         <button
           type="submit"
-          className="w-full bg-primary text-secondary py-3 rounded font-semibold hover:bg-secondary hover:text-primary transition"
+          className="w-full bg-primary text-secondary py-3 rounded font-semibold transition-transform transform hover:scale-105"
         >
           Login
         </button>

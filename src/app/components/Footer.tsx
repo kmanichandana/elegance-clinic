@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="flex flex-col">
           {/* Logo */}
           <div className="text-3xl font-bold mb-4">
-            Elegance Clinic
+            Elegance <span className="text-sm font-cursive italic">Smile &amp; Glow</span>
           </div>
           
           {/* Description */}
@@ -22,24 +22,21 @@ export default function Footer() {
             We combine expertise and care to help you look and feel your best.
           </p>
           <div className="mt-10 flex justify-start gap-6">
-            <Link href="https://instagram.com" target="_blank" className="hover:text-white transition">
+            <Link href="https://www.instagram.com/elegance_cosmetic_care?igsh=eWhycWs1ZXZ2dnEw&utm_source=qr" target="_blank" className="hover:text-white transition">
               <FaInstagram className="w-6 h-6" />
             </Link>
             <Link href="https://linkedin.com" target="_blank" className="hover:text-white transition">
               <FaLinkedin className="w-6 h-6" />
             </Link>
-            <Link href="https://youtube.com" target="_blank" className="hover:text-white transition">
+            <Link href="https://www.youtube.com/@Elegance_Dental_Clinic" target="_blank" className="hover:text-white transition">
               <FaYoutube className="w-6 h-6" />
-            </Link>
-            <Link href="https://facebook.com" target="_blank" className="hover:text-white transition">
-              <FaFacebook className="w-6 h-6" />
             </Link>
           </div>
         </div>
         
 
         {/* Right Half - Links + Contact Info */}
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-25">
           
           {/* Quick Links */}
           <div className="flex-1">
@@ -78,15 +75,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <PhoneIcon className="w-5 h-5 mr-3" />
-                <span>9573050592, 9030371919</span>
+                <span>9573050592, 040-45094434</span>
               </li>
               <li className="flex items-center">
                 <MailIcon className="w-5 h-5 mr-3" />
                 <span>Elegancesmileandglow@gmail.com</span>
               </li>
               <li className="flex items-center">
-                <MapPinIcon className="w-5 h-5 mr-" />
-                <span>123 Elegance Street, Wellness City, India</span>
+                <MapPinIcon className="w-5 h-5 mr-3" />
+                <span>FIRST floor, Plot no 578N, Teachers Colony,<br></br> B.N Reddy Nagar, Hastinapuram, Hyderabad, India</span>
               </li>
             </ul>
           </div>
