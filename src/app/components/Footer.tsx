@@ -1,7 +1,7 @@
 /// Footer.tsx
 import Link from "next/link";
 import { ArrowRightIcon, PhoneIcon, MailIcon, MapPinIcon} from "lucide-react";
-import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
